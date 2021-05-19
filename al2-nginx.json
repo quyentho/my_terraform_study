@@ -1,0 +1,20 @@
+{
+  "builders": [
+    {
+      "type": "amazon-ebs",
+      "ami_name": "quickapp-al2-nginx",
+      "region": "us-west-1",
+      "access_key": "AKIAR3VDYXZZYTBAFAGQ",
+      "secret_key": "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",
+      "source_ami": "ami-04468e03c37242e1e",
+      "instance_type": "t2.micro",
+      "ssh_username": "ec2-user"
+    }
+  ],
+  "provisioners":[
+    {
+      "type": "shell",
+      "script": "nginx-install.sh"
+    }
+  ]
+}
